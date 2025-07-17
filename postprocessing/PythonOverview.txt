@@ -1,0 +1,41 @@
+>fasta_to_IDs<
+Fetches all IDs from a fasta file and compiles them in a list to be used by <filterByID>
+
+>filterByID<
+removes all EXACT IDs in a list (file) from a fasta file, results get saved to a new fastafile
+
+>filterbyPDBID<
+removes all PDB chain IDs that share a PDB id from a supplied list
+
+>parser<
+parses fasta(-like) to csv format and filters sequences by length (>=50), this csv format is used in training
+
+>PiSITE_to_FASTA<
+Compiles all entries from PiSITE (downloaded) into a fasta-like format: ID, sequence, interface
+
+>SamplePiSITE<
+randomly samples 20 entries from a fasta file and saves these to a new file
+
+>lengthFilter< DEPRECATED
+stand alone script for filtering with minimum length, normally this is also included in <parser>
+
+>generalFilter<
+filters a fasta-like file to remove entries lesser than a specified length, and remove entries with an empty interface string
+
+>maxFeatureToMinFeature<
+converts csv files from the old pipenn csv feature list to the new minimalized feature list
+
+>csvStats<
+collects a variety of statistics from parsed csv files (the type <parser> creates), the output is printed to the console
+
+>predModAndStats.py<
+modifies y_preds column from model prediction (test) file, so it resembles an interface string. Next y_trues is compared to y_preds in order to generate a confusion matrix per sequence.
+next this confusion matrix is used to calculate performance scores per sequence.
+this script also fetches taxonomy information from uniprot's rest api
+
+>vennStats<
+investigates overlap between two csv files where the first column is ID
+returns number of ids unique to either file one or file two along with the number of overlap between them and a short summary of the overlap.
+
+>predRankings<
+gets top 5 and bottom 5 taxa based on MCC values, prints to console so make sure to redirect output to a file
