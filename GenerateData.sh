@@ -20,7 +20,7 @@ mkdir -p data
 
 echo 'Assembling Fasta-like file from PiSite data'
 # pisite to fasta
-#python "$SCRIPT_DIR/scripts/PiSITE_to_FASTA.py" $1 "$CALL_DIR/data/RAW.fasta"
+python "$SCRIPT_DIR/scripts/PiSITE_to_FASTA.py" $1 "$CALL_DIR/data/RAW.fasta"
 
 echo 'Cleaning and Filtering data by length'
 # fasta to filtered fasta, minimum sequence length is 26
