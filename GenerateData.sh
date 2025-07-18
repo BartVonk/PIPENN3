@@ -65,7 +65,7 @@ awk 'NR % 3 != 0' "$CALL_DIR/data/filtered.fasta" > "$CALL_DIR/data/filtered_noI
 
 # create ID lists (Pisite, filterding)
 grep '^>' "$CALL_DIR/data/clusterRes2_rep_seq.fasta" | sed 's/^>//' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' > "$CALL_DIR/data/clusterRes_rep_IDs.txt"
-grep '^>' ../PiSite/PiSITE_filtered.fasta | sed 's/^>//' > "$CALL_DIR/data/PiSITE_IDs.txt"
+grep '^>' "$CALL_DIR/data/filtered.fasta" | sed 's/^>//' > "$CALL_DIR/data/PiSITE_IDs.txt"
 sort "$CALL_DIR/data/PiSITE_IDs.txt" > "$CALL_DIR/data/sorted_PiSITE_IDs.txt"
 sort "$CALL_DIR/data/clusterRes_rep_IDs.txt" > "$CALL_DIR/data/sorted_clusterRes_rep_IDs.txt"
 # create IDs_no_overlap.txt
